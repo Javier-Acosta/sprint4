@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
-import { fetchData } from '../components/services/personajesAPI'
+import { fetchData } from '../services/personajesAPI'
 
 const PersonajesContext= createContext()
 
@@ -9,15 +9,17 @@ const [loading, setLoading] = useState(false)
 const [error, setError] = useState(null)
 
 
-const getPersonajes=async (personajes)=>{
+const getPersonajes=async ()=>{
     setLoading(true)
     setError(null)
     try {
-        const data =await fetchData (personajes)
-        setPersonajeData(data)
+        const data =await fetchData ()
+        console.log('desde context',data.data[0]);
+        setPersonajeData(data[0])
+        
     } catch (error) {
-        console.log(error);
-        setError(error)
+        
+        setError('No se encontro el personaje')
         setPersonajeData(null)
         
     }finally {

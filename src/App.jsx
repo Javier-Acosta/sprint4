@@ -1,5 +1,6 @@
 import Heroes from './components/Heroes';
 import PersonajeCard from './components/PersonajeCard';
+import SearchForm from './components/SearchForm';
 import { PersonajeProvider } from './context/personajesContext';
 
 
@@ -20,6 +21,8 @@ function App() {
 
     </div>
     <PersonajeCard/>
+    <SearchForm/>
+    
     </PersonajeProvider>
 
       
