@@ -14,8 +14,8 @@ const getPersonajes=async ()=>{
     setError(null)
     try {
         const data =await fetchData ()
-        console.log('desde context',data.data[0]);
-        setPersonajeData(data[0])
+        console.log('desde context',data.data.results);
+        setPersonajeData(data)
         
     } catch (error) {
         
