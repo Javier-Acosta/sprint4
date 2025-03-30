@@ -12,7 +12,8 @@ const SearchForm = () => {
   const [personaje, setPersonaje] = useState('')
   const { getPersonajes } = usePersonajes()
 
-  const notify = () => toast.success("Voy a tener suerte!");
+ 
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault()
