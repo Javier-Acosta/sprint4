@@ -13,17 +13,16 @@ export const PersonajeProvider = ({ children }) => {
 
     
 
-    const getPersonajes = async () => {
+    const getPersonajes = async (name) => {
         toast.info('Buscando Personajes...')
         setLoading(true)
         setError(null)
         try {
-            const data = await fetchData()
+            const data = await fetchData(name)
             console.log('desde context', data.data.results);
             setPersonajeData(data)
             toast.success(' Data featched successfully ')
         } catch (error) {
-           
             toast.error(`Error Status ${error}`)
             setPersonajeData(null)
         } finally {
