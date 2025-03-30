@@ -16,6 +16,10 @@ const PersonajeCard = () => {
   if (!personajeData) return null
 
   const { name, species, image, status } = personajeData
+
+ 
+
+  
   console.log('Card', personajeData); // LSK - aquí estas mostrando por consola el personajeData, desde el navegador podes ver que es lo que te trare
   // así que aquí esta tu problema, no estas accediendo a los datos de la forma correcta, ya que el personajeData es un objeto, por lo tanto no tenes que acceder a la informacion
   // que vos queres, que sería, el arreglo de personajes, que se encuentra dentro del objeto data, y luego el arreglo results, por lo tanto tenes que acceder a los datos de la siguiente manera:
@@ -29,9 +33,10 @@ const PersonajeCard = () => {
     <div >
       {/* <h2 className='text-2xl font-bold'>{name}</h2> */}
       <h2 className='text-2xl font-bold'>{personajeData.data.results[0].name}</h2>
-      <p className='text-2xl font-bold'>{species}</p>
+      {/* <h2 className='text-2xl font-bold'>{person}</h2> */}
+      <p className='text-2xl font-bold'></p>
       <p className='text-2xl font-bold'>{status}</p>
-      PersonajeCard</div>
+      </div>
   )
 }
 

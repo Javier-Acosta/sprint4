@@ -6,16 +6,20 @@ import React, { useState } from 'react'
 import { usePersonajes } from '../context/PersonajesContext'
 // ⚠️⚠️⚠️ ----------------------------------------------------------------------------------------------------------------------------------- ⚠️⚠️⚠️
 
+import { ToastContainer, toast } from 'react-toastify';
+
 const SearchForm = () => {
   const [personaje, setPersonaje] = useState('')
   const { getPersonajes } = usePersonajes()
 
+  const notify = () => toast.success("Voy a tener suerte!");
+
   const handleSubmit = (e) => {
     e.preventDefault()
     if (personaje.trim() === '') return
-    console.log('boton', personaje);
-
+    
     getPersonajes(personaje)
+    
   }
 
   return (
@@ -26,12 +30,16 @@ const SearchForm = () => {
         placeholder='Entry Person'
         className='p-2 border border-gray-300 rounded'
       />
+      
       <button
+      
         type='submit'
+        
         className='bg-blue-500 text-white px-4 py-2 rounded'
       >
         Search
       </button>
+      <ToastContainer />
     </form>
   )
 }
