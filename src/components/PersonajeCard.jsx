@@ -29,7 +29,7 @@ const PersonajeCard = () => {
 
   return (
     <div >
-      <h2 className='text-2xl font-bold'>{personajeData.data.results[0].name}</h2>
+      <h2 className='text-2xl font-bold'>{name}</h2>
 
       <h2 className='text-2xl font-bold'></h2>
       {/* <h2 className='text-2xl font-b1
@@ -42,7 +42,7 @@ const PersonajeCard = () => {
               <h2 className='text-2xl font-bold'>{personaje.name}</h2>
               <p className='text-gray-700'>Species: {personaje.species}</p>
               <p className='text-gray-700'>Status: {personaje.status}</p>
-              <img src={personaje.image} alt="" width="50" />
+              <img src={personaje.image} alt="" width="100" />
             </div>
           ))}
         </>
