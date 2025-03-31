@@ -1,7 +1,5 @@
-// LKS - aquí solo te indento el código y lo formateo un poco, solo para visualizarlo mejor y que este mas prolijo 
 import React, { createContext, useContext, useState } from 'react'
 import { fetchData } from '../services/personajesAPI'
-
 import { ToastContainer, toast } from 'react-toastify';
 
 const PersonajesContext = createContext()
@@ -11,7 +9,6 @@ export const PersonajeProvider = ({ children }) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
-    
 
     const getPersonajes = async (name) => {
         toast.info('Buscando Personajes...')
@@ -29,6 +26,8 @@ export const PersonajeProvider = ({ children }) => {
             setLoading(false)
         }
     }
+ 
+
 
     return (
         <PersonajesContext.Provider value={{ personajeData, loading, error, getPersonajes }}>
