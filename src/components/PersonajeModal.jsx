@@ -24,7 +24,7 @@ const PersonajeModal = ({pelis,isEmpty,clearLista,removePelis}) => {
 
                             <div id="carrito" className="bg-white p-3">
                                 {isEmpty ? (
-                                    <p className="text-center">El carrito esta vacio</p>
+                                    <p className="text-center">Favorito está vacio</p>
                                 ) : (
                                 <>
                                     <table className="w-100 table">
@@ -68,7 +68,7 @@ const PersonajeModal = ({pelis,isEmpty,clearLista,removePelis}) => {
                                 <button 
                                     className="btn btn-dark w-100 mt-3 p-2"
                                     onClick={clearLista}
-                                >Vaciar Carrito</button>
+                                >Vaciar Favorito</button>
                                 
                             </div>
                         </div>

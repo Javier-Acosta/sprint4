@@ -12,7 +12,6 @@ const PersonajeCard = ({addToCard}) => {
 
   const { personajeData, loading, error } = usePersonajes() 
 
-  console.log('personajeData -> ', personajeData)
   if (loading) return <p className='text-gray-700'>Loading...  </p>
   if (error) return <p className='text-red-500'>{error}  </p>
   if (!personajeData) return null
@@ -25,7 +24,7 @@ const PersonajeCard = ({addToCard}) => {
 
   
   return (
-    <div >
+    <div className=' grid grid-cols-3 grid-rows-3 gap-4 '>
       
 
 
@@ -44,10 +43,10 @@ const PersonajeCard = ({addToCard}) => {
   <div>
     <img className="size-48 shadow-xl rounded-md" alt="" src={personaje.image} />
   </div>
-  <div className="flex items-center md:items-start">
-    <span className="text-2xl font-medium">{personaje.name}</span>
-    <span className="font-medium text-sky-500">{personaje.species}</span>
+  <div className="items-center aspect-3/2">
+    <span className="text-2xl font-medium ">{personaje.name}</span>
     <span className="flex gap-2 font-medium text-gray-600 dark:text-gray-400">
+    <span className="font-medium text-sky-500">{personaje.species}</span>
       <span>{personaje.status}</span>
       <span>·</span>
       <span>{personaje.gender}</span>

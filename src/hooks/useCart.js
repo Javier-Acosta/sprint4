@@ -10,7 +10,6 @@ export const useCart = () => {
         return localStorageLista ? JSON.parse(localStorageLista) : []
     }
     const [pelis, setPelis] = useState(initialLista)
-    console.log('LOG', pelis);
 
 
     const MAX_ITEMS = 10
@@ -59,10 +58,10 @@ export const useCart = () => {
     // State derivado
     const isEmpty = useMemo(() => pelis.length === 0, [pelis])
 
-    return{
+    return {
 
 
-        
+
         pelis,
         addToCard,
         removePelis,
