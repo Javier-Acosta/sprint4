@@ -20,7 +20,7 @@ export const PersonajeProvider = ({ children }) => {
             setPersonajeData(data)
             toast.success(' Data featched successfully ')
         } catch (error) {
-            toast.error(`Error Status ${error}`)
+            toast.error(`No se encontró Personajes ${error}`)
             setPersonajeData(null)
         } finally {
             setLoading(false)
